@@ -1,9 +1,12 @@
 import React, { useState, useRef} from "react";
 import registerPic from "../assets/registerPic.png";
 import registerCss from "../styles/registration.module.css";
+import appCss from '../styles/App.module.css'
+import {useNavigate} from 'react-router-dom'
 
 function Registration() {
 
+  let navigate = useNavigate()
   const nameRef = useRef(null);
   const userNameRef = useRef(null);
   const emailRef = useRef(null);
@@ -75,7 +78,7 @@ function Registration() {
         console.log(info)
         const StringifyInfo = JSON.stringify(info);
         localStorage.setItem('information', StringifyInfo);
-
+        navigate('/category')
       }
   }
 
@@ -91,7 +94,7 @@ function Registration() {
       <div className={registerCss.form_section}>
           
             
-            <form onSubmit={saveData}>
+            <form onSubmit={saveData} className={registerCss.form}>
               <h1>Super app</h1>
               <p>Create your new account</p>
 

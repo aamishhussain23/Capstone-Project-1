@@ -9,12 +9,6 @@
     overflow: hidden;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
-}
 
 .image_container{
     /* border: 2px solid yellow; */
@@ -34,13 +28,13 @@ input[type="number"]::-webkit-outer-spin-button {
     font-weight: 700;
 }
 
-img{
+.image_container > img{
     height: 100%;
     width: 100%;
 }
 
 
-h1{
+.form_section h1{
     font-family: single day, sans-serif;
     text-align: 'center';
     width: '100%';
@@ -49,7 +43,7 @@ h1{
     font-size: 50px;
 }
 
-form > p{
+.form_section > form > p{
     margin-top: 8px;
     margin-bottom: 8px;
     text-align: 'center';
@@ -60,14 +54,14 @@ form > p{
 }
 
 
-h5{
+.form h5{
     color: #FF0000;
     font-size: 12.5px;
     font-family: 'DM Sans';
     font-weight: 400;
 }
 
-h5{
+.form h5{
     margin-top: 3px;
 }
 
@@ -97,7 +91,7 @@ h5{
     margin-left: 8px;
 }
 
-form{
+.form_section form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,7 +99,7 @@ form{
 
 }
 
-.info > input, h5, .checkField, .para, button{
+.info > input, .form h5, .checkField, .para, .form button{
     width: 50%;
 }
 
@@ -140,7 +134,7 @@ form > div{
     align-items: center;
 }
 
-button{
+.form > button{
     margin-top: 10px;
     margin-bottom: 20px;
     color: white;
@@ -159,8 +153,3 @@ button{
     color: #7C7C7C;
     line-height: 20px;
 }
-
-
-/* *{
-    border: 2px solid red;
-} */
