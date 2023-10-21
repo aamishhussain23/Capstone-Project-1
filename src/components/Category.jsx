@@ -96,6 +96,7 @@ function Category() {
               idx={index}
               array={arrName}
               setArrName={setArrName}
+              color={item.cardColor}
             ></Card>
           ))}
 
@@ -150,54 +151,64 @@ let arr_obj = [
     id: 1,
     movieType: "Action",
     movieImage: actionImg,
+    cardColor: '#FF5209'
   },
   {
     id: 2,
     movieType: "Drama",
     movieImage: dramaImg,
+    cardColor: '#D7A4FF'
   },
   {
     id: 3,
     movieType: "Romance",
     movieImage: romanceImg,
+    cardColor: '#148A08'
   },
   {
     id: 4,
     movieType: "Thriller",
     movieImage: thrillerImg,
+    cardColor: '#84C2FF'
   },
   {
     id: 5,
     movieType: "Western",
     movieImage: westernImg,
+    cardColor: '#902500'
   },
   {
     id: 6,
     movieType: "Horror",
     movieImage: horrorImg,
+    cardColor: '#7358FF'
   },
   {
     id: 7,
     movieType: "Fantasy",
     movieImage: fantasyImg,
+    cardColor: '#FF4ADE'
   },
   {
     id: 8,
     movieType: "Music",
     movieImage: musicImg,
+    cardColor: '#E61E32'
   },
   {
     id: 9,
     movieType: "Fiction",
     movieImage: fictionImg,
+    cardColor: '#6CD061'
   },
 ];
 
-function Card({ movieType, movieImage, func, idx, array, setArrName }) {
+function Card({ movieType, movieImage, func, idx, array, setArrName, color}) {
   const isAdded = array.includes(movieType);
 
   return (
     <div
+      style={{backgroundColor: `${color}`}}
       className={`${categoryCss.box} ${
         isAdded ? `${categoryCss.border}` : `${categoryCss.none}`
       }`}
