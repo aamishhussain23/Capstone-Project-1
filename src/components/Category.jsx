@@ -11,10 +11,13 @@ import horrorImg from "../assets/Horror.png";
 import fantasyImg from "../assets/Fantasy.png";
 import musicImg from "../assets/Music.png";
 import fictionImg from "../assets/Fiction.png";
+import { useNavigate } from "react-router-dom";
 
 function Category() {
   let [arrName, setArrName] = useState([]);
   let [status, setStatus] = useState(true);
+
+  let Navigate = useNavigate()
 
   function func(data) {
     if (!arrName.includes(data)) {
@@ -30,6 +33,7 @@ function Category() {
     } else {
       setStatus(true);
       localStorage.setItem("categories", JSON.stringify(arrName));
+      Navigate('/')
     }
   }
 
