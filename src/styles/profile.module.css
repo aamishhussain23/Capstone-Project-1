@@ -1,5 +1,6 @@
 .profile{
     background-color: #5746EA;
+    /* border-radius: 1rem; */
     position: relative;
     height: 100%;
     width: 100%;
@@ -30,18 +31,8 @@
     font-weight: 400;
 }
 
-.name2{
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
 .email{
     font-size: larger;
-    font-weight: 400;
-}
-
-.email2{
-    font-size: 1.5rem;
     font-weight: 400;
 }
 
@@ -49,12 +40,6 @@
     font-size: xx-large;
     font-weight: 500;
 }
-
-.username2{
-    font-size: 3rem;
-    font-weight: 500;
-}
-
 
 .btn{
     background-color: #9F94FF;
@@ -64,7 +49,7 @@
 }
 
 .buttons{
-    width: 70%;
+    width: 80%;
     height: 40%;
     display: flex;
     justify-content: space-between;
@@ -72,16 +57,4 @@
     flex-wrap: wrap;
     overflow-y: auto;
     gap: 5px;
-}
-
-.buttons2{
-    width: 45%;
-    height: 25%;
-    display: flex;
-    justify-content: space-between;
-    justify-items: flex-start;
-    flex-wrap: wrap;
-    overflow-y: auto;
-    gap: 5px;
-    
 }

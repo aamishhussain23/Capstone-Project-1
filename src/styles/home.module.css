@@ -5,30 +5,10 @@
     color: aliceblue;
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr ;
-    grid-template-rows: 0.3fr 1fr 1fr 1.2fr;
-    padding: 4%;
-    column-gap: 4%;
+    grid-template-rows: 0.3fr 1fr 1fr 1.5fr;
+    padding: 5%;
+    column-gap: 2%;
     row-gap: 2%;
-}
-
-.child_2{
-    height: 100vh;
-    width: 100%;
-    background-color: black;
-    color: aliceblue;
-    display: grid;
-    grid-template-columns: 0.8fr 0.3fr ;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 3% 5%;
-    padding: 4%;
-}
-
-.news{
-    height: 98%;
-}
-
-.news_box{
-    height: 97%;
 }
 
 .col_1{
@@ -52,5 +32,9 @@
 }
 
 .rest_row{
-    grid-row: span 5;
+    grid-row: span 4;
+}
+
+*{
+    /* border: 2px solid red ; */
 }
