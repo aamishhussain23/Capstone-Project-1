@@ -2,4 +2,33 @@
     background-color: #1E2343;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.time_setter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* justify-content: space-between; */
+    width: 40%;
+    height: 100%;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.space_around{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+*{
+    /* border: 2px solid red; */
 }
