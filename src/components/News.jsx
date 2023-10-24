@@ -2,7 +2,7 @@ import React from 'react'
 import newsCss from '../styles/news.module.css'
 import image from '../assets/Thriller.png'
 
-function News({title, description, img}) {
+function News({date, hour, minute, ampm, title, description, img}) {
   return (
     <>
       <div className={newsCss.img_time}>
@@ -12,7 +12,7 @@ function News({title, description, img}) {
         <div className={newsCss.strip}>
           <h2>{title}</h2>
           <p className={newsCss.time}>
-            2-20-2023 | 07:35 PM
+            {date} | {hour}:{minute} {ampm}
           </p>
         </div>
       </div>

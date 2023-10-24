@@ -5,8 +5,8 @@
     color: aliceblue;
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr ;
-    grid-template-rows: 0.3fr 1fr 1fr 1.5fr;
-    padding: 5%;
+    grid-template-rows: 0.3fr 1fr 1fr 1.09fr;
+    padding: 4%;
     column-gap: 2%;
     row-gap: 2%;
 }

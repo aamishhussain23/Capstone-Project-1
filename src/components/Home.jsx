@@ -32,25 +32,98 @@ function Home() {
   let [description, setDescription] = useState('')
   let [newsImg, setNewsImg] = useState('')
 
-  useEffect( () => {
+  useEffect(() => {
+  const newsApi = async () => {
+    try {
+      const raw_data = await fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=333618fda6dd425990d7e21b2169a83a');
+      const response = await raw_data.json();
 
-    const newsApi = async () => {
-      let raw_data = await fetch('https://newsapi.org/v2/everything?q=tesla&from=2023-09-23&sortBy=publishedAt&apiKey=333618fda6dd425990d7e21b2169a83a')
-      .then( (res) => {
-          res.json().then( (data) => {
-            console.log(data.articles[0])
-            setTitle(data.articles[0].title)
-            setDescription(data.articles[0].description)
-            setNewsImg(data.articles[0].urlToImage)
-          } )
-      })
-      
+      if (response.articles && response.articles.length > 0) {
+        setTitle(response.articles[0].title);
+        setDescription(response.articles[0].description);
+        setNewsImg(response.articles[0].urlToImage);
+      } else {
+        console.log("No articles found in the response");
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
+  };
 
-    newsApi()
+  newsApi();
+}, []);
 
-  }, [])
 
+  let [humidity, setHumidity] = useState('')
+  let [date, setDate] = useState('')
+  let [hour, setHour] = useState('')
+  let [minute, setMinute] = useState('')
+  let [ampm, setAMPM] = useState('')
+  let [type, setType] = useState('')
+  let [speed, setSpeed] = useState('')
+  let [icon, setIcon] = useState('')
+  let [tempe, setTempe] = useState('')
+  let [pressure, setPressure] = useState('')
+  let [location, setLocation] = useState('') 
+
+
+  useEffect(() => {
+    const weatherApi = async () => {
+      try {
+        const raw_data = await fetch('https://api.weatherapi.com/v1/current.json?key=bdea9abc5a54446482971503232210&q=bihar');
+        const response = await raw_data.json();
+  
+        if (response.current) {
+          setHumidity(response.current.humidity);
+          setIcon(response.current.condition.icon);
+          setTempe(response.current.temp_c);
+          setPressure(response.current.pressure_mb);
+          setSpeed(response.current.wind_kph);
+          setType(response.current.condition.text)
+          setLocation(response.location.name)
+          if(response.location){
+            let today = '';
+            let hr = '';
+            let min = '';
+              for (let i = 0; i < 10; i++) {
+                today += response.location.localtime[i]
+              }
+              const parts = today.split("-");
+              const reversedToday = parts.reverse().join("-");
+              setDate(reversedToday);
+
+              for (let i = 11; i < 13; i++){
+                  hr += parseInt(response.location.localtime[i])
+              }
+              for (let i = 14; i < 16; i++){
+                  min += parseInt(response.location.localtime[i])
+              }
+
+              let date_and_time;
+
+              // do PM
+              if(hr >= 12 && hr < 24){
+                setAMPM('PM')
+                setMinute(min)
+                setHour(hr)
+              }
+              else{
+                setAMPM('AM')
+                setHour(hr)
+                setMinute(min)
+              }
+            }
+        } else {
+          console.log("No weather data found in the response");
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+  
+    weatherApi();
+  }, []);
+  
 
   return (
     <>
@@ -64,11 +137,11 @@ function Home() {
           </div>
 
           <div className={homeCss.rest_row}>
-            <News title={title} description={description} img={newsImg}></News>
+            <News date={date} hour={hour} minute={minute} ampm={ampm} title={title} description={description} img={newsImg}></News>
           </div>
 
           <div className={homeCss.temp1}>
-            <Temp></Temp>
+            <Temp location={location.toUpperCase()} date={date} hour={hour} minute={minute} ampm={ampm} humidity={humidity} speed={speed} icon={icon} tempe={tempe} pressure={pressure} type={type}></Temp>
           </div>
 
           <div className={homeCss.col_2}>
