@@ -2,7 +2,7 @@ import React from 'react'
 import profileCss from '../styles/profile.module.css'
 import userImg from '../assets/userImg.png'
 
-function Profileweather() {
+function Profileweather({name, email, username, categories}) {
   return (
     <div className={profileCss.profile}>
       
@@ -10,19 +10,16 @@ function Profileweather() {
       
       <div className={profileCss.right_part}>
             <div className={profileCss.p_tags}>
-                <p className={profileCss.name}>KK Vinay</p>
-                <p className={profileCss.email}>Vinay090@gmail.com</p>
-                <p className={profileCss.username}>vinay060</p>
+                <p className={profileCss.name}>{name}</p> 
+                <p className={profileCss.email}>{email}</p>
+                <p className={profileCss.username}>{username}</p>
             </div>
             <div className={profileCss.buttons}>
-                <Button></Button>
-                <Button></Button>
-                <Button></Button>
-                <Button></Button>
-                <Button></Button>
-                <Button></Button>
-                <Button></Button>
-                <Button></Button>
+                {
+                  categories.map( (element, idx) => (
+                    <Button element={element} key={idx}></Button>
+                  ))
+                }
             </div>
             
       </div>
@@ -33,9 +30,9 @@ function Profileweather() {
 export default Profileweather
 
 
-function Button() {
+function Button({element}) {
   return (
-    <button className={profileCss.btn}><span>Horror</span></button>
+    <button className={profileCss.btn}><span>{element}</span></button>
   )
 }
 
