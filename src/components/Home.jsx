@@ -128,7 +128,7 @@ function Home() {
   return (
     <>
         <div className={homeCss.child_1}>
-          <div className={homeCss.row_2}>
+          <div  className={homeCss.row_2}>
             <Profileweather name={name} email={email} username={username} categories={categories}></Profileweather>
           </div>
 

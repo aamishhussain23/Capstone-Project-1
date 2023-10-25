@@ -4,7 +4,7 @@ import image from '../assets/Thriller.png'
 
 function News({date, hour, minute, ampm, title, description, img}) {
   return (
-    <>
+    <div className={newsCss.news}>
       <div className={newsCss.img_time}>
 
         <img src={img} alt="" />
@@ -20,7 +20,7 @@ function News({date, hour, minute, ampm, title, description, img}) {
       <div className={newsCss.text}>
         {description} 
       </div>
-    </>
+    </div>
   )
 }
 

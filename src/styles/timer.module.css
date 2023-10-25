@@ -2,6 +2,7 @@
     background-color: #1E2343;
     height: 100%;
     width: 100%;
+    border-radius: 1rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
