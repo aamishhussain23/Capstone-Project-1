@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
+import {useNavigate } from 'react-router-dom'
 import homeCss from '../styles/home.module.css'
 import Profileweather from './Profileweather'
 import News from './News'
@@ -7,6 +8,8 @@ import Notes from './Notes'
 import Timer from './Timer'
 
 function Home() {
+
+  let Navigate = useNavigate()
 
   let [name, setName] = useState('')
   let [email, setEmail] = useState('')
@@ -147,6 +150,26 @@ function Home() {
           <div className={homeCss.col_2}>
             <Timer></Timer>
           </div>
+          <button
+          onClick={() => Navigate('/movies')}
+            style={{
+              backgroundColor: '#148A08',
+              borderRadius: '1rem',
+              position: 'absolute',
+              right: '4%',
+              bottom: '0.5%',
+              width: '8%',
+              color: "white",
+              letterSpacing: "0.5px",
+              fontFamily: "DM sans",
+              fontWeight: "500",
+              fontSize: "15px",
+              cursor: "pointer",
+            }}
+            
+          >
+            Browse
+          </button>
         </div> 
 
     </>
