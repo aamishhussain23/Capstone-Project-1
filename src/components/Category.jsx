@@ -33,7 +33,7 @@ function Category() {
     } else {
       setStatus(true);
       localStorage.setItem("categories", JSON.stringify(arrName));
-      Navigate('/')
+        Navigate('/home')
     }
   }
 
