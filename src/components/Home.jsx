@@ -158,7 +158,7 @@ function Home() {
               position: 'absolute',
               right: '4%',
               bottom: '0.5%',
-              width: '8%',
+              width: '8rem',
               color: "white",
               letterSpacing: "0.5px",
               fontFamily: "DM sans",

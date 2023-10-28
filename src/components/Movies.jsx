@@ -50,7 +50,7 @@ function Movies() {
               {categoryData[movieType] && categoryData[movieType].map((element, index) => (element.poster_path && (
                     <img
                       key={index}
-                      src={`https://image.tmdb.org/t/p/w154/${element.poster_path}`}
+                      src={`https://image.tmdb.org/t/p/w185/${element.poster_path}`}
                       alt=""
                     />
                   )

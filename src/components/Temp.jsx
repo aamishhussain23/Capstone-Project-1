@@ -1,5 +1,8 @@
 import React from 'react'
 import tempCss from '../styles/temp.module.css'
+import humidyImg from '../assets/humidityImg.png'
+import mbarImg from '../assets/mbarImg.png'
+import windImg from '../assets/windImg.png'
 
 function Temp({location, date, hour, minute, ampm, humidity, speed, icon, tempe, pressure, type}) {
   return (
@@ -35,7 +38,7 @@ function Temp({location, date, hour, minute, ampm, humidity, speed, icon, tempe,
                 </div>
 
                 <div className={tempCss.pressure}>
-                    <img src="" alt="" className={tempCss.img}/>
+                    <img src={mbarImg} alt="" className={tempCss.img}/>
                     <div className={tempCss.mbar}>
                         {pressure} mbar Pressure
                     </div>
@@ -49,14 +52,14 @@ function Temp({location, date, hour, minute, ampm, humidity, speed, icon, tempe,
 
             <div className={tempCss.others}>
                 <div className={tempCss.wind}>
-                    <img src="" alt="" className={tempCss.img}/>
+                    <img src={windImg} alt="" className={tempCss.img}/>
                     <div className={tempCss.unit}>
                         {speed} km/h Wind
                     </div>
                 </div>
 
                 <div className={tempCss.condition}>
-                    <img src="" alt="" className={tempCss.img}/>
+                    <img src={humidyImg} alt="" className={tempCss.img}/>
                     <div className={tempCss.humidity}>
                         {humidity} % Humidity
                     </div>
