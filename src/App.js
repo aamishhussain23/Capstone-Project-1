@@ -15,6 +15,7 @@ function App() {
         <Route path='/' element={isLocalStorageEmpty ? <Registration /> : <Home />}></Route>
         <Route path='/category' element={<Category />}></Route>
         <Route path='/home' element={<Home />}></Route>
+        <Route path='/register' element={<Registration />}></Route>
         <Route path='/movies' element={<Movies />}></Route>
         <Route path='*' element={<Error />}></Route>
       </Routes>
